@@ -1,5 +1,5 @@
 import os
-os.system('python -m venv venv && venv\\Scripts\\activate.bat && pip install pipreqs && pipreqs "C:\\Users\\Sinan Dincer\\Documents\\GitHub\\Scraper" && pip install -r requirements.txt')
+os.system('python -m venv venv && venv\\Scripts\\activate.bat && pip install pipreqs && pipreqs "' + os.getcwd() +'" && pip install -r requirements.txt')
 import pandas as pd
 from math import ceil
 from selenium import webdriver
@@ -255,7 +255,7 @@ class TrueCarScraper:
 
 # run the scraper with "driverType='phantomjs'" if you want the scraper to run in the background
 # otherwise run it with "driverType='chrome'"
-scraper = TrueCarScraper(driverType='phantomjs',searchLocation='shelby-ia')
+scraper = TrueCarScraper(driverType='chrome',searchLocation='shelby-ia')
 scraper.scrape()
 scraper.exportOutput()
 
